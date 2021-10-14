@@ -1,7 +1,10 @@
+import os
 import pandas as pd
 import streamlit as st
 import plotly.express as px
 
+path = os.path.dirname(__file__)
+myfile = path+'/Annual-sales-report-2020.csv'
 
 
 st.set_page_config(page_title='SALES ANALYSIS REPORT 2020 FOR COMPANY 2020')
@@ -23,7 +26,7 @@ st.subheader('DATA ANALYSIS ON A CLIENT PROJECT')
 
 DATA = 'Annual-sales-report-2020.csv'
 
-df = pd.read_csv(DATA)
+df = pd.read_csv(myfile)
 
 st.dataframe(df)
 
